@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Agazh">
+  <meta name="author" content="Agazh Team">
   <link rel="shortcut icon" href="favicon.png">
 
-  <meta name="description" content="Agazh - Family Job Posting" />
-  <meta name="keywords" content="Agazh, tutoring, job portal, family job posting" />
+  <meta name="description" content="Agazh: Post Jobs to Find Qualified Tutors and College Students" />
+  <meta name="keywords" content="job posting, recruitment, tutoring, students, opportunities" />
 
   <!-- Bootstrap CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -19,41 +19,59 @@
 
 <body>
 
-  <!-- Header/Navigation -->
+  <!-- Start Header/Navigation -->
   <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Agazh navigation bar">
     <div class="container">
+      <!-- Logo -->
       <a class="navbar-brand" href="index.html">Agazh<span>.</span></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAgazh" aria-controls="navbarAgazh" aria-expanded="false" aria-label="Toggle navigation">
+
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsAgazh" aria-controls="navbarsAgazh" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarAgazh">
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarsAgazh">
         <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="find-tutor.html">Find a Tutor</a></li>
+          <li><a class="nav-link" href="find-job.html">Find a Job</a></li>
+          <li><a class="nav-link active" href="post-job.html">Post a Job</a></li>
           <li><a class="nav-link" href="about.html">About Us</a></li>
-          <li><a class="nav-link" href="services.html">Services</a></li>
-          <li class="active"><a class="nav-link" href="post-job.html">Post a Job</a></li>
           <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li><a class="nav-link" href="login.html">Login/Register</a></li>
         </ul>
       </div>
     </div>
   </nav>
+  <!-- End Header/Navigation -->
 
-  <!-- Hero Section -->
-  <div class="hero">
+  <!-- Start Hero Section -->
+  <div class="hero job-posting-hero">
     <div class="container">
-      <div class="row justify-content-between">
+      <div class="row justify-content-between align-items-center">
+        <!-- Left Section with Text -->
         <div class="col-lg-6">
           <div class="intro-excerpt">
             <h1>Post a Job</h1>
-            <p>Find qualified and trustworthy tutors or helpers for your family. Fill in the form below to post your job requirements.</p>
+            <p class="mb-4">Looking for qualified tutors or college students? Post your job opportunity and connect with the right talent today.</p>
+            <p><a href="post-job.html" class="btn btn-secondary me-2">Get Started</a><a href="about.html" class="btn">Learn More</a></p>
           </div>
         </div>
+
+        <!-- Right Section with Image -->
         <div class="col-lg-6">
-          <img src="images/1.png" class="img-fluid" alt="Job Posting">
+          <div class="hero-img-wrap">
+            <img src="images/job-posting.png" class="img-fluid" alt="Post a Job Hero Image">
+          </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- End Hero Section -->
+
+</body>
+</html>
 
   <!-- Job Posting Form -->
   <div class="untree_co-section">
