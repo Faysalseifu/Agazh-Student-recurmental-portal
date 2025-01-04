@@ -3,90 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Agazh Team">
-  <link rel="shortcut icon" href="favicon.png">
-
-  <meta name="description" content="Agazh: College Student Tutoring and Recruitment Portal" />
-  <meta name="keywords" content="tutoring, recruitment, jobs, students, profiles" />
-
-  <!-- Bootstrap CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="css/tiny-slider.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
   <title>Agazh | Profile Upload</title>
-</head>
-
-<body>
-
-  <!-- Start Header/Navigation -->
-  <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Agazh navigation bar">
-    <div class="container">
-      <!-- Logo -->
-      <a class="navbar-brand" href="index.html">Agazh<span>.</span></a>
-
-      <!-- Toggle Button for Mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsAgazh" aria-controls="navbarsAgazh" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Navbar Links -->
-      <div class="collapse navbar-collapse" id="navbarsAgazh">
-        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li><a class="nav-link" href="find-tutor.html">Find a Tutor</a></li>
-          <li><a class="nav-link" href="find-job.html">Find a Job</a></li>
-          <li><a class="nav-link" href="post-opportunity.html">Post an Opportunity</a></li>
-          <li><a class="nav-link" href="about.html">About Us</a></li>
-          <li><a class="nav-link" href="contact.html">Contact Us</a></li>
-          <li><a class="nav-link active" href="profile-upload.html">Upload Profile</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- End Header/Navigation -->
-
-  <!-- Start Hero Section -->
-  <div class="hero profile-hero">
-    <div class="container">
-      <div class="row justify-content-between align-items-center">
-        <!-- Left Section with Text -->
-        <div class="col-lg-6">
-          <div class="intro-excerpt">
-            <h1>Upload Your Profile</h1>
-            <p class="mb-4">Get started by creating a profile to connect with tutoring or job opportunities.</p>
-            <p><a href="profile-upload.html" class="btn btn-secondary me-2">Upload Now</a><a href="find-tutor.html" class="btn">Learn More</a></p>
-          </div>
-        </div>
-
-        <!-- Right Section with Image -->
-        <div class="col-lg-6">
-          <div class="hero-img-wrap">
-            <img src="images/upload-profile.png" class="img-fluid" alt="Profile Upload Image">
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Hero Section -->
-
-</body>
-</html>
-
-  <style>
-    .hidden {
-      display: none;
-    }
-  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <script src="js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Profile Upload</h2>
+    <h2 class="text-center mb-4">Upload Your Profile</h2>
     <form>
       <!-- User Type Selection -->
       <div class="form-group mb-4">
         <label for="userType" class="form-label">I am a:</label>
-        <select class="form-control" id="userType" onchange="toggleFormFields()">
+        <select class="form-control" id="userType" onchange="toggleFormFields()" required>
           <option value="" disabled selected>Select user type</option>
           <option value="student">College Student</option>
           <option value="family">Family</option>
@@ -111,7 +39,7 @@
 
       <div class="form-group mb-4">
         <label for="profilePhoto" class="form-label">Profile Photo</label>
-        <input type="file" id="profilePhoto" class="form-control-file" required>
+        <input type="file" id="profilePhoto" class="form-control-file" accept="image/*" required>
       </div>
 
       <!-- College Student Fields -->
@@ -120,12 +48,10 @@
           <label for="collegeName" class="form-label">College Name</label>
           <input type="text" id="collegeName" class="form-control" placeholder="Enter your college name">
         </div>
-
         <div class="form-group mb-4">
           <label for="fieldOfStudy" class="form-label">Field of Study</label>
           <input type="text" id="fieldOfStudy" class="form-control" placeholder="Enter your field of study">
         </div>
-
         <div class="form-group mb-4">
           <label for="yearOfStudy" class="form-label">Year of Study</label>
           <select class="form-control" id="yearOfStudy">
@@ -136,6 +62,14 @@
             <option value="4th">4th Year</option>
           </select>
         </div>
+        <div class="form-group mb-4">
+          <label for="gpa" class="form-label">GPA</label>
+          <input type="number" id="gpa" class="form-control" placeholder="Enter your GPA (e.g., 3.5)" step="0.01">
+        </div>
+        <div class="form-group mb-4">
+          <label for="experience" class="form-label">Tutoring Experience</label>
+          <textarea id="experience" class="form-control" rows="4" placeholder="Describe your tutoring experience"></textarea>
+        </div>
       </div>
 
       <!-- Family Fields -->
@@ -144,15 +78,13 @@
           <label for="familyAddress" class="form-label">Address</label>
           <input type="text" id="familyAddress" class="form-control" placeholder="Enter your address">
         </div>
-
         <div class="form-group mb-4">
           <label for="preferredSubjects" class="form-label">Preferred Subjects for Tutor</label>
           <input type="text" id="preferredSubjects" class="form-control" placeholder="Enter subjects (e.g., Math, English)">
         </div>
-
         <div class="form-group mb-4">
-          <label for="numberOfChildren" class="form-label">Number of Children</label>
-          <input type="number" id="numberOfChildren" class="form-control" placeholder="Enter the number of children">
+          <label for="budget" class="form-label">Budget Range</label>
+          <input type="text" id="budget" class="form-control" placeholder="Enter your budget range (e.g., $10–$20/hour)">
         </div>
       </div>
 
@@ -178,5 +110,10 @@
       }
     }
   </script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </body>
 </html>
