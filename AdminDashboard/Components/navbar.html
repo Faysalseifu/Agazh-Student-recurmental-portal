@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard Navbar</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <!-- Logo -->
+      <div class="navbar-logo">
+        <a href="index.html">Admin Dashboard</a>
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="navbar-links">
+        <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="users.html"><i class="fas fa-users"></i> Users</a></li>
+        <li><a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        <li><a href="settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+      </ul>
+
+      <!-- Right Section -->
+      <div class="navbar-right">
+        <!-- Search -->
+        <div class="navbar-search">
+          <input type="text" placeholder="Search...">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <!-- Notifications -->
+        <div class="navbar-notifications">
+          <i class="fas fa-bell"></i>
+          <span class="notification-badge">3</span>
+        </div>
+
+        <!-- Profile Dropdown -->
+        <div class="navbar-profile">
+          <img src="images/profile.jpg" alt="User Profile" class="profile-pic">
+          <div class="profile-dropdown">
+            <ul>
+              <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
+              <li><a href="settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+              <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</body>
+</html>
