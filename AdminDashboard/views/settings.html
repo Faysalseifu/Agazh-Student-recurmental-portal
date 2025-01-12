@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Include Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Settings</h1>
+    <form>
+      <div class="form-group">
+        <label for="appName">Application Name</label>
+        <input type="text" id="appName" placeholder="Enter application name">
+      </div>
+      <div class="form-group">
+        <label for="appEmail">Support Email</label>
+        <input type="email" id="appEmail" placeholder="Enter support email">
+      </div>
+      <div class="form-group">
+        <label for="passwordPolicy">Password Policy</label>
+        <select id="passwordPolicy">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <button type="submit" class="btn-primary">Save Settings</button>
+    </form>
+  </main>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+</body>
+</html>

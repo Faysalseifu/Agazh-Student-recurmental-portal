@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports and Analytics</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <!-- Include Navbar -->
+  <div id="navbar"></div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <h1>Reports and Analytics</h1>
+    <div class="reports-section">
+      <div class="chart">
+        <h3>Monthly Users</h3>
+        <canvas id="userChart"></canvas>
+      </div>
+      <div class="chart">
+        <h3>Revenue Growth</h3>
+        <canvas id="revenueChart"></canvas>
+      </div>
+    </div>
+  </main>
+
+  <!-- Include Footer -->
+  <div id="footer"></div>
+
+  <!-- Include Chart.js for data visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    // Placeholder for report data visualization
+    const ctx1 = document.getElementById('userChart').getContext('2d');
+    const ctx2 = document.getElementById('revenueChart').getContext('2d');
+    // Add chart configurations...
+  </script>
+</body>
+</html>
