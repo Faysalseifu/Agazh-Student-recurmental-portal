@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <h2>Admin Dashboard</h2>
+    </div>
+    <nav class="sidebar-nav">
+      <ul>
+        <li><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+        <li><a href="views/users.html"><i class="fas fa-users"></i> Manage Users</a></li>
+        <li><a href="views/content.html"><i class="fas fa-file-alt"></i> Content Management</a></li>
+        <li><a href="views/reports.html"><i class="fas fa-chart-bar"></i> Reports</a></li>
+        <li><a href="views/settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <header class="main-header">
+      <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button><i class="fas fa-search"></i></button>
+      </div>
+      <div class="user-profile">
+        <img src="assets/images/profile.jpg" alt="Profile" class="profile-img">
+        <span>Admin</span>
+      </div>
+    </header>
+
+    <section class="dashboard-overview">
+      <h1>Welcome, Admin!</h1>
+      <p>Here is an overview of the system's current status:</p>
+      <div class="widgets">
+        <div class="widget">
+          <h3>Users</h3>
+          <p>120 Registered</p>
+        </div>
+        <div class="widget">
+          <h3>Content</h3>
+          <p>45 Posts</p>
+        </div>
+        <div class="widget">
+          <h3>Reports</h3>
+          <p>15 Pending</p>
+        </div>
+        <div class="widget">
+          <h3>Revenue</h3>
+          <p>$12,340</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="analytics">
+      <h2>Analytics</h2>
+      <div id="chart-container">
+        <!-- Chart will be rendered here -->
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/charts.js"></script>
+</body>
+
+</html>
