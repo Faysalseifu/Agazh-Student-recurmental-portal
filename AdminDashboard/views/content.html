@@ -4,16 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Content Management</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style.css"> <!-- Main Stylesheet -->
+  <script defer src="../js/navbar.js"></script> <!-- Navbar Dynamic Inclusion -->
+  <script defer src="../js/footer.js"></script> <!-- Footer Dynamic Inclusion -->
+  <script defer src="../js/content.js"></script> <!-- Script for Content Management -->
 </head>
 <body>
   <!-- Include Navbar -->
   <div id="navbar"></div>
 
-  <!-- Main Content -->
+  <!-- Main Content Area -->
   <main class="main-content">
-    <h1>Content Management</h1>
-    <div class="content-table">
+    <h1 class="page-title">Content Management</h1>
+
+    <!-- Add New Content Section -->
+    <section class="add-content">
+      <h2>Add New Content</h2>
+      <form id="addContentForm" class="content-form">
+        <label for="contentTitle">Title:</label>
+        <input type="text" id="contentTitle" name="title" placeholder="Enter content title" required>
+
+        <label for="contentCategory">Category:</label>
+        <select id="contentCategory" name="category" required>
+          <option value="Documentation">Documentation</option>
+          <option value="Tutorial">Tutorial</option>
+          <option value="Blog">Blog</option>
+          <option value="News">News</option>
+        </select>
+
+        <label for="contentStatus">Status:</label>
+        <select id="contentStatus" name="status" required>
+          <option value="Draft">Draft</option>
+          <option value="Published">Published</option>
+          <option value="Archived">Archived</option>
+        </select>
+
+        <button type="submit" class="btn-primary">Add Content</button>
+      </form>
+    </section>
+
+    <!-- Content Table Section -->
+    <section class="content-table">
+      <h2>Manage Existing Content</h2>
       <table>
         <thead>
           <tr>
@@ -24,7 +56,7 @@
             <th>Actions</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="contentList">
           <!-- Placeholder for dynamically loaded content -->
           <tr>
             <td>101</td>
@@ -36,9 +68,19 @@
               <button class="btn-delete">Delete</button>
             </td>
           </tr>
+          <tr>
+            <td>102</td>
+            <td>Introduction to JavaScript</td>
+            <td>Tutorial</td>
+            <td>Draft</td>
+            <td>
+              <button class="btn-edit">Edit</button>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
         </tbody>
       </table>
-    </div>
+    </section>
   </main>
 
   <!-- Include Footer -->
