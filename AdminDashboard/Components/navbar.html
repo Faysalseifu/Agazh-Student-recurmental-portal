@@ -32,10 +32,25 @@
           <button><i class="fas fa-search"></i></button>
         </div>
 
+        <!-- Theme Toggle -->
+        <div class="navbar-theme-toggle">
+          <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+
         <!-- Notifications -->
         <div class="navbar-notifications">
           <i class="fas fa-bell"></i>
-          <span class="notification-badge">3</span>
+          <span class="notification-badge" id="notification-badge">3</span>
+          <div class="notification-dropdown">
+            <ul>
+              <li>You have a new user request.</li>
+              <li>System maintenance scheduled at 10 PM.</li>
+              <li>Backup completed successfully.</li>
+            </ul>
+            <a href="notifications.html" class="view-all">View All</a>
+          </div>
         </div>
 
         <!-- Profile Dropdown -->
@@ -45,6 +60,7 @@
             <ul>
               <li><a href="profile.html"><i class="fas fa-user"></i> My Profile</a></li>
               <li><a href="settings.html"><i class="fas fa-cogs"></i> Settings</a></li>
+              <li><a href="help.html"><i class="fas fa-question-circle"></i> Help</a></li>
               <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
             </ul>
           </div>
@@ -52,5 +68,25 @@
       </div>
     </div>
   </nav>
+
+  <!-- JavaScript for Navbar -->
+  <script>
+    // Theme Toggle
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Notifications Dropdown
+    document.querySelector('.navbar-notifications').addEventListener('click', () => {
+      const dropdown = document.querySelector('.notification-dropdown');
+      dropdown.classList.toggle('show');
+    });
+
+    // Profile Dropdown
+    document.querySelector('.navbar-profile').addEventListener('click', () => {
+      const dropdown = document.querySelector('.profile-dropdown');
+      dropdown.classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
