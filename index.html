@@ -88,16 +88,22 @@
 		<!-- End Hero Section -->
 		<div class="search-bar">
 			<div class="search-inputs">
-			  <input type="text" placeholder="Search Job Here..." class="search-box">
-			  <button class="clear-btn">✖</button>
-			  <input type="text" placeholder="Search By Company..." class="search-box">
-			  <button class="clear-btn">✖</button>
-			  <input type="text" placeholder="Search By Location..." class="search-box">
-			  <button class="clear-btn">✖</button>
+			  <div class="input-group">
+				<input type="text" placeholder="Search Job Here..." class="search-box">
+				<button class="clear-btn">✖</button>
+			  </div>
+			  <div class="input-group">
+				<input type="text" placeholder="Search By Company..." class="search-box">
+				<button class="clear-btn">✖</button>
+			  </div>
+			  <div class="input-group">
+				<input type="text" placeholder="Search By Location..." class="search-box">
+				<button class="clear-btn">✖</button>
+			  </div>
 			  <button class="search-btn">Search</button>
 			</div>
 			<div class="filters">
-			  <div>
+			  <div class="filter-group">
 				<label for="sort">Sort by:</label>
 				<select id="sort" class="dropdown">
 				  <option>Relevance</option>
@@ -105,7 +111,7 @@
 				  <option>Salary</option>
 				</select>
 			  </div>
-			  <div>
+			  <div class="filter-group">
 				<label for="type">Type:</label>
 				<select id="type" class="dropdown">
 				  <option>Full-time</option>
@@ -113,7 +119,7 @@
 				  <option>Internship</option>
 				</select>
 			  </div>
-			  <div>
+			  <div class="filter-group">
 				<label for="level">Level:</label>
 				<select id="level" class="dropdown">
 				  <option>Senior</option>
@@ -124,6 +130,7 @@
 			  <button class="clear-all">Clear All</button>
 			</div>
 		  </div>
+		  
 <!-- Start Job Section -->
 <div class="job-section">
 	<div class="container">
