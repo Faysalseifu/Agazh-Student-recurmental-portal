@@ -1,42 +1,85 @@
+
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Agazh">
-    <link rel="shortcut icon" href="favicon.png">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <title>Find Tutor | Agazh</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Agazh Team">
+  <link rel="shortcut icon" href="favicon.png">
+
+  <meta name="description" content="Agazh: College Student Tutoring and Recruitment Portal" />
+  <meta name="keywords" content="tutoring, recruitment, jobs, students" />
+
+  <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="css/tiny-slider.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Agazh | College Student Tutoring and Recruitment Portal</title>
 </head>
 
 <body>
-    <!-- Start Header/Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Agazh<span>.</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                    <li class="nav-item active"><a class="nav-link" href="find-tutor.html">Find Tutor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- End Header/Navigation -->
 
+  <!-- Start Header/Navigation -->
+  <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Agazh navigation bar">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">Agazh<span>.</span></a>
+
+      <!-- Toggle Button for Mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsAgazh" aria-controls="navbarsAgazh" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navbarsAgazh">
+        <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li><a class="nav-link" href="find-tutor.html">Find a Tutor</a></li>
+          <li><a class="nav-link" href="find-job.html">Find a Job</a></li>
+          <li><a class="nav-link" href="post-opportunity.html">Post an Opportunity</a></li>
+          <li><a class="nav-link" href="about.html">About Us</a></li>
+          <li><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li><a class="nav-link" href="login.html">Login/Register</a></li>
+        </ul>
+
+        <!-- Language Selector -->
+        <ul class="custom-navbar-lang navbar-nav mb-2 mb-md-0 ms-4">
+          <!-- <li><button class="btn btn-outline-light me-2">EN</button></li>
+          <li><button class="btn btn-outline-light me-2">አማ</button></li>
+          <li><button class="btn btn-outline-light">Afaan</button></li> -->
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- End Header/Navigation -->
+  <div class="hero">
+    <div class="container">
+      <div class="row justify-content-between">
+        <!-- Left Section with Text -->
+        <div class="col-lg-5">
+          <div class="intro-excerpt">
+            <h1>Agazh: <span class="d-block">Tutoring & Job Portal</span></h1>
+            <p class="mb-4">Connecting college students with tutoring and part-time job opportunities.</p>
+            <p><a href="upload.html" class="btn btn-secondary me-2">Register Now</a><a href="find-tutor.html" class="btn">Find a Tutor</a></p>
+          </div>
+        </div>
+  
+        <!-- Right Section with Image -->
+        <div class="col-lg-7">
+          <div class="hero-img-wrap">
+            <img src="images/hero-image.png" class="img-fluid" alt="Agazh Hero Image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     <!-- Start Hero Section -->
     <div class="hero bg-light py-5">
         <div class="container text-center">
-            <h1 class="display-4">Find Your Perfect Tutor</h1>
+            <h1 class="display-4">Sallect best matching totour for you</h1>
             <p class="lead">Explore a wide range of qualified tutors to meet your academic and skill development needs.</p>
         </div>
     </div>
@@ -91,11 +134,105 @@
     <!-- End Tutor Listing Section -->
 
     <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2025 Agazh. All Rights Reserved.</p>
+    <footer class="footer-section">
+        <div class="container relative">
+      
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="subscription-form">
+                <h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+      
+                <form action="#" class="row g-3">
+                  <div class="col-auto">
+                    <input type="text" class="form-control" placeholder="Enter your name">
+                  </div>
+                  <div class="col-auto">
+                    <input type="email" class="form-control" placeholder="Enter your email">
+                  </div>
+                  <div class="col-auto">
+                    <button class="btn btn-primary">
+                      <span class="fa fa-paper-plane"></span>
+                    </button>
+                  </div>
+                </form>
+      
+              </div>
+            </div>
+          </div>
+      
+          <div class="row g-5 mb-5">
+            <div class="col-lg-4">
+              <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Agazh<span>.</span></a></div>
+              <p class="mb-4">Agazh is Ethiopia's leading online platform connecting students with reliable tutors and part-time job opportunities. Empowering education and fostering career growth, we bridge the gap between learning and earning.</p>
+      
+              <ul class="list-unstyled custom-social">
+                  <ul class="list-unstyled custom-social">
+                      <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                      <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                      <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                      <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                  </ul>
+              </ul>
+            </div>
+      
+            <div class="col-lg-8">
+              <div class="row links-wrap">
+                <div class="col-6 col-sm-6 col-md-3">
+                  <ul class="list-unstyled">
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact us</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-sm-6 col-md-3">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Live chat</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-sm-6 col-md-3">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                  </ul>
+                </div>
+      
+                <div class="col-6 col-sm-6 col-md-3">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Find Tutors</a></li>
+                    <li><a href="#">Post Jobs</a></li>
+                    <li><a href="#">Become a Tutor</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+      
+          </div>
+      
+          <div class="border-top copyright">
+            <div class="row pt-4">
+              <div class="col-lg-6">
+                <p class="mb-2 text-center text-lg-start">Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved by Agazh.</p>
+              </div>
+      
+              <div class="col-lg-6 text-center text-lg-end">
+                <ul class="list-unstyled d-inline-flex ms-auto">
+                  <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+              </div>
+      
+            </div>
+          </div>
+      
         </div>
-    </footer>
+      </footer>
     <!-- End Footer -->
 
     <!-- Bootstrap JS -->
