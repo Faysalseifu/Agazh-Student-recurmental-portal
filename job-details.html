@@ -86,7 +86,7 @@
         <div class="col-md-4">
           <div class="card p-4">
             <h4>Job Application</h4>
-            <form action="apply.html" method="post">
+            <form id="jobApplicationForm">
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -103,11 +103,31 @@
             </form>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Job Details Section -->
-
+        
+        <!-- Notification Placeholder -->
+        <div id="notification" style="display: none; margin-top: 20px; text-align: center;" class="alert alert-success">
+          🎉 You have successfully applied!
+        </div>
+        
+        <script>
+          // Handle form submission
+          document.getElementById('jobApplicationForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent the form from reloading the page
+        
+            // Display success notification
+            const notification = document.getElementById('notification');
+            notification.style.display = 'block'; // Show the notification
+        
+            // Hide the notification after 3 seconds
+            setTimeout(() => {
+              notification.style.display = 'none';
+            }, 3000);
+        
+            // Optionally, reset the form after showing the notification
+            e.target.reset();
+          });
+        </script>
+        
   <!-- Start Proposal Writing Section -->
   <div class="untree_co-section bg-light">
     <div class="container">
