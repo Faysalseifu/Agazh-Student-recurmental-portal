@@ -86,7 +86,7 @@
         <div class="col-md-4">
           <div class="card p-4">
             <h4>Job Application</h4>
-            <form id="jobApplicationForm">
+            <form action="thankyou.html" method="post">
               <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
@@ -96,6 +96,14 @@
                 <input type="email" class="form-control" id="email" name="email" required>
               </div>
               <div class="mb-3">
+                <label for="proposal-title" class="form-label">Proposal Title</label>
+                <input type="text" class="form-control" id="proposal-title" name="proposal-title" required>
+              </div>
+              <div class="mb-3">
+                <label for="proposal-body" class="form-label">Proposal Content</label>
+                <textarea class="form-control" id="proposal-body" name="proposal-body" rows="8" required></textarea>
+              </div>
+              <div class="mb-3">
                 <label for="resume" class="form-label">Upload Resume</label>
                 <input type="file" class="form-control" id="resume" name="resume" required>
               </div>
@@ -103,52 +111,13 @@
             </form>
           </div>
         </div>
-        
-        <!-- Notification Placeholder -->
-        <div id="notification" style="display: none; margin-top: 20px; text-align: center;" class="alert alert-success">
-          🎉 You have successfully applied!
-        </div>
-        
-        <script>
-          // Handle form submission
-          document.getElementById('jobApplicationForm').addEventListener('submit', function (e) {
-            e.preventDefault(); // Prevent the form from reloading the page
-        
-            // Display success notification
-            const notification = document.getElementById('notification');
-            notification.style.display = 'block'; // Show the notification
-        
-            // Hide the notification after 3 seconds
-            setTimeout(() => {
-              notification.style.display = 'none';
-            }, 3000);
-        
-            // Optionally, reset the form after showing the notification
-            e.target.reset();
-          });
-        </script>
-        
-  <!-- Start Proposal Writing Section -->
-  <div class="untree_co-section bg-light">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Write Your Proposal</h2>
-          <form action="submit-proposal.html" method="post">
-            <div class="mb-3">
-              <label for="proposal-title" class="form-label">Proposal Title</label>
-              <input type="text" class="form-control" id="proposal-title" name="proposal-title" required>
-            </div>
-            <div class="mb-3">
-              <label for="proposal-body" class="form-label">Proposal Content</label>
-              <textarea class="form-control" id="proposal-body" name="proposal-body" rows="8" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit Proposal</button>
-          </form>
-        </div>
       </div>
     </div>
   </div>
+  <!-- End Job Details Section -->
+
+  <!-- Start Proposal Writing Section -->
+
   <!-- End Proposal Writing Section -->
 
   <!-- Start Footer Section -->
