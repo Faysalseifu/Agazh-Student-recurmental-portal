@@ -1,0 +1,35 @@
+async function fetchJobs() {
+  try {
+    const response = await fetch('/jobs');
+    if (!response.ok) {
+      throw new Error(`Server Error: ${response.statusText} (${response.status})`);
+    }
+
+    const jobs = await response.json();
+    const jobList = document.getElementById('job-list');
+    jobList.innerHTML = '';
+
+    if (jobs.length === 0) {
+      jobList.innerHTML = '<p>No job listings available.</p>';
+      return;
+    }
+
+    jobs.forEach(job => {
+      const jobItem = document.createElement('div');
+      jobItem.className = 'job-item';
+      jobItem.innerHTML = `
+        <h3>${job.jobTitle || 'Unknown Job Title'}</h3>
+        <p><strong>Location:</strong> ${job.jobLocation || 'Unknown'}</p>
+        <p><strong>Description:</strong> ${job.jobDescription || 'No description available.'}</p>
+        <p><strong>Contact:</strong> ${job.contactNumber || 'N/A'}, ${job.email || 'N/A'}</p>
+        <p><strong>Payment:</strong> ${job.payment || 'Not specified'}</p>
+        <p><strong>Schedule:</strong> ${job.schedule || 'Not specified'}</p>
+        <p><strong>Additional Info:</strong> ${job.additionalInfo || 'None'}</p>
+      `;
+      jobList.appendChild(jobItem);
+    });
+  } catch (error) {
+    console.error('Failed to fetch jobs:', error);
+    alert(`Failed to fetch job listings: ${error.message}`);
+  }
+}
