@@ -10,7 +10,9 @@ const UserSchema =mongoose.Schema({
     age: Number
 })
 
+const UserModel = mongoose.model("users", UserSchema)
 app.get("/getUser", (req, res)=>{
+   res.json(UserModel.find())
 
 })
 app.listen(3001, ()=>{
