@@ -12,7 +12,11 @@ const UserSchema =mongoose.Schema({
 
 const UserModel = mongoose.model("users", UserSchema)
 app.get("/getUser", (req, res)=>{
-   res.json(UserModel.find())
+   res.json(UserModel.find({}).then(function(users){
+    res.json(users)
+   })).catch(function(err){
+    console.log(err);
+   })
 
 })
 app.listen(3001, ()=>{
