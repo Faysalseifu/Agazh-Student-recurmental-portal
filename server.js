@@ -1,73 +1,77 @@
 const express = require('express');
 const cors = require('cors');
-const fs = require('fs');
+const fs = require('fs').promises; // Use promises for async/await support
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
-
-// Middleware
-app.use(cors()); // Enable CORS
-app.use(express.json()); // Parse JSON request bodies
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded form data
-app.use(express.static(path.join(__dirname, 'public'))); // Serve static files
-
-// Path to jobs.txt
 const filePath = path.join(__dirname, 'jobs.txt');
 
-// Endpoint to fetch job data
-app.get('/jobs', (req, res) => {
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading jobs file:', err);
-      return res.status(500).send('Unable to fetch job data');
-    }
+// Middleware
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+//  Fetch job listings
+app.get('/jobs', async (req, res) => {
+  try {
+    const data = await fs.readFile(filePath, 'utf8');
+    if (!data.trim()) return res.json({ message: 'No jobs available', jobs: [] });
 
     const jobs = data
       .split('----------------------------------------')
-      .filter((job) => job.trim())
-      .map((job) => {
+      .filter(job => job.trim())
+      .map(job => {
         const jobData = {};
-        job.split('\n').forEach((line) => {
-          const [key, value] = line.split(':').map((str) => str.trim());
+        job.split('\n').forEach(line => {
+          const [key, value] = line.split(':').map(str => str.trim());
           if (key && value) jobData[key] = value;
         });
         return jobData;
       });
 
-    res.json(jobs);
-  });
+    console.log(`Fetched ${jobs.length} jobs`);
+    res.json({ message: 'Jobs retrieved successfully', jobs });
+  } catch (error) {
+    console.error('Error reading jobs file:', error);
+    res.status(500).json({ error: 'Unable to fetch job data' });
+  }
 });
 
-// Endpoint to add new job data
-app.post('/jobs', (req, res) => {
-  const job = req.body;
+//  Add a new job listing
+app.post('/jobs', async (req, res) => {
+  const { familyName, contactNumber, email, jobTitle, jobDescription, jobLocation, schedule, payment, additionalInfo } = req.body;
 
-  // Format the new job data
+  // Validate required fields
+  if (!familyName || !contactNumber || !email || !jobTitle || !jobDescription || !jobLocation) {
+    return res.status(400).json({ error: 'Missing required fields' });
+  }
+
   const jobData = `
-Family Name: ${job.familyName || ''}
-Contact Number: ${job.contactNumber || ''}
-Email: ${job.email || ''}
-Job Title: ${job.jobTitle || ''}
-Job Description: ${job.jobDescription || ''}
-Job Location: ${job.jobLocation || ''}
-Preferred Schedule: ${job.schedule || ''}
-Payment: ${job.payment || ''} Birr
-Additional Information: ${job.additionalInfo || ''}
+Family Name: ${familyName}
+Contact Number: ${contactNumber}
+Email: ${email}
+Job Title: ${jobTitle}
+Job Description: ${jobDescription}
+Job Location: ${jobLocation}
+Preferred Schedule: ${schedule || 'Not specified'}
+Payment: ${payment || 'Not specified'} Birr
+Additional Information: ${additionalInfo || 'None'}
 ----------------------------------------
 `;
 
-  fs.appendFile(filePath, jobData, (err) => {
-    if (err) {
-      console.error('Error writing to file:', err);
-      return res.status(500).send('Failed to save job data');
-    }
-    console.log('Job data saved successfully!');
-    res.status(200).send('Job added successfully!');
-  });
+  try {
+    await fs.appendFile(filePath, jobData);
+    console.log('New job added successfully');
+    res.status(201).json({ message: 'Job added successfully!' });
+  } catch (error) {
+    console.error('Error writing to file:', error);
+    res.status(500).json({ error: 'Failed to save job data' });
+  }
 });
 
-// Start the server
+//  Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  console.log(` Server is running at http://localhost:${PORT}`);
 });
