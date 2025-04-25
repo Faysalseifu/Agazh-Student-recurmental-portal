@@ -31,7 +31,7 @@ a {
     font-weight: 600; }
 
 .custom-navbar {
-  background: #559e82 !important;
+  background: #114733 !important;
   padding-top: 20px;
   padding-bottom: 20px; }
   .custom-navbar .navbar-brand {
@@ -96,7 +96,7 @@ a {
         margin-right: 20px; }
 
 .hero {
-  background: #3b5d50;
+  background: #74c2a4 !important;
   padding: calc(4rem - 30px) 0 0rem 0; }
   @media (min-width: 768px) {
     .hero {
